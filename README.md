@@ -113,7 +113,7 @@ This attempt ingores a few aspects:
     - This is why you pick from 'top 5'
 - Not playing on hard mode
   - The guesses adhere to hard mode, all previous hints must be used in next answer
-  - This means the bot can have trouble gaining yellow letters if the board is mostly discovered
+  - This means the script can have trouble gaining yellow letters if the board is mostly discovered
 - Optimisations
   - This is mostly brute force. A more efficient method may be beneficial
 - Doesn't explicity rule out the definite spots of yellow letters when you have ruled out the spots it's not in - See [#1](https://github.com/Sandwich1699975/Wordle-Solver/issues/1)

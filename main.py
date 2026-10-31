@@ -73,7 +73,7 @@ def get_score(word, assumptions) -> list:
             if letter == ass:
                 # This has already been figured out. This letter is fine
                 # NOTE this can be changed back to a 2, 1 was for testing
-                score += 1
+                score += 1.5
                 continue
             else:
                 # There is no way this word is valid
@@ -114,7 +114,7 @@ def guess(game) -> str:
                     # This spot will not be the yellow letter
                     yellows.add(letter)
                     assumptions[i][1].add(letter)
-                    # This spot has now been prooved to not be the yellow letter
+                    # This spot has now been proved to not be the yellow letter
                     if letter in assumptions[i][0]:
                         assumptions[i][0].remove(letter)
                 case '-':
@@ -135,7 +135,7 @@ def guess(game) -> str:
                         f'Fatal error for guess, symbol = {symbol}')
 
     # Calculate possible answers
-    # Answers stored in form of [word, hueristic score]
+    # Answers stored in form of [word, heuristic score]
     possible = []
     possible_amount = 0
     with open('temp.txt', 'r') as f:
@@ -182,7 +182,7 @@ def guess(game) -> str:
                 pick_index = int(pick_index)
                 assert pick_index >= 1 and pick_index <= len(top_5)
             except (AssertionError, ValueError):
-                print('Plese enter a valid answer')
+                print('Please enter a valid answer')
                 continue
             picked_word = top_5[pick_index-1][0]
             print(
@@ -196,7 +196,7 @@ def main() -> None:
 
     print_line()
 
-    # First guess of the wordle. Toeas was mathematicaly the best starting word
+    # First guess of the wordle. Toeas was mathematically the best starting word
     STARTING_WORD = 'toeas'
     last_guess = STARTING_WORD
     # Game board, [ [word, results] ... ]
